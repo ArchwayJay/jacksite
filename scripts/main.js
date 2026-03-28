@@ -24,10 +24,33 @@ document.addEventListener('DOMContentLoaded', function(){
   // highlight active link based on current path
   try{
     const links = document.querySelectorAll('.site-nav a');
-    const path = window.location.pathname.split('/').pop() || 'index.html';
+    const normalize = (p) => {
+      if(!p) return 'index.html';
+      // strip query/hash
+      p = p.split('?')[0].split('#')[0];
+      // remove leading/trailing slashes
+      p = p.replace(/^\/+|\/+$/g, '');
+      if(p === '') return 'index.html';
+      const parts = p.split('/');
+      const last = parts[parts.length-1];
+      // if last part has no extension, treat as directory and use index.html
+      if(!last.includes('.')) return last + '/index.html';
+      return last;
+    };
+    const current = (function(){
+      const p = window.location.pathname;
+      const n = normalize(p);
+      return n.split('/').pop();
+    })();
     links.forEach(a => {
-      const href = a.getAttribute('href').split('/').pop();
-      if(href === path){
+      const raw = a.getAttribute('href') || '';
+      const hrefNorm = (function(){
+        // handle relative paths and bare names
+        let h = raw.replace(/^\.\//,'');
+        // if href points to a directory like 'blog' or 'blog/'
+        return normalize(h).split('/').pop();
+      })();
+      if(hrefNorm === current){
         a.classList.add('active');
         a.setAttribute('aria-current','page');
       }
