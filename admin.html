@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin — Jack Johnson</title>
+  <link rel="icon" href="/images/alien.png">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+  <a class="brand" href="/">
+        <img src="/images/jack-linkedin.png" alt="Jack Johnson" class="nav-avatar">
+        Jack Johnson
+      </a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page container">
+    <section class="card">
+      <h1>Admin</h1>
+  <p class="lead">Admin panel. Sign in to create, edit, or delete posts.</p>
+
+      <div id="auth">
+        <div id="loginBox">
+          <label>Username<br><input id="user" value=""></label>
+          <label>Password<br><input id="pwd" type="password" value=""></label>
+          <div style="margin-top:.5rem"><button id="loginBtn" class="btn">Sign in</button></div>
+        </div>
+          <div id="logoutBox" style="display:none">
+            <span>Signed in as <strong>admin</strong></span>
+            <button id="logoutBtn" class="btn" style="background:#eef2ff;color:var(--accent);margin-left:1rem">Sign out</button>
+          </div>
+      </div>
+
+      <hr>
+
+      <div id="editor" style="display:none">
+        <h2>Create post</h2>
+        <label>Title<br><input id="title" name="title"></label>
+        <label>Header image (optional)<br><input id="headerFile" type="file" accept="image/*"></label>
+        <label>Content (Markdown)<br><textarea id="content" name="content" rows="8"></textarea></label>
+        <div style="margin-top:.5rem"><button id="createBtn" class="btn">Create Post</button></div>
+      </div>
+
+      <hr>
+
+      <h2>Existing posts</h2>
+      <div id="posts">Loading…</div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+  <script>
+  let simplemde;
+  function initEditor(){
+    if(simplemde) return;
+    simplemde = new SimpleMDE({ element: document.getElementById('content'), spellChecker: false, status: false });
+  }
+
+  async function refreshPosts(){
+    const res = await fetch('/api/posts');
+    const posts = await res.json();
+    const el = document.getElementById('posts');
+    if(!posts.length) el.innerHTML = '<p>No posts yet.</p>';
+    else el.innerHTML = posts.map(p => `
+      <article class="card" style="margin-bottom:1rem">
+        <h3>${p.title}</h3>
+        ${p.header_image ? `<img src="${p.header_image}" alt="" style="max-width:100%;height:auto;margin-top:.5rem;border-radius:6px">` : ''}
+        <div style="color:var(--muted);font-size:.95rem;margin-top:.5rem">${p.html || ''}</div>
+        <div style="margin-top:.5rem">
+          <button data-id="${p.id}" class="editBtn">Edit</button>
+          <button data-id="${p.id}" class="delBtn" style="margin-left:.5rem">Delete</button>
+        </div>
+      </article>
+    `).join('');
+    document.querySelectorAll('.delBtn').forEach(b => b.addEventListener('click', delPost));
+    document.querySelectorAll('.editBtn').forEach(b => b.addEventListener('click', editPost));
+  }
+
+  async function delPost(e){
+    const id = e.currentTarget.getAttribute('data-id');
+    if(!confirm('Delete post?')) return;
+    const res = await fetch('/api/posts/'+id, {method:'DELETE'});
+    if(res.ok) refreshPosts(); else alert('Failed');
+  }
+
+  async function editPost(e){
+    const id = e.currentTarget.getAttribute('data-id');
+    const res = await fetch('/api/posts');
+    const posts = await res.json();
+    const post = posts.find(p => p.id == id);
+    if(!post) return alert('Not found');
+    document.getElementById('title').value = post.title;
+    initEditor();
+    simplemde.value(post.content);
+  // note: header image isn't editable inline; show filename if present
+  document.getElementById('headerFile').value = '';
+    document.getElementById('createBtn').textContent = 'Update Post';
+    document.getElementById('createBtn').setAttribute('data-edit-id', id);
+  }
+
+  document.getElementById('loginBtn').addEventListener('click', async function(){
+    const user = document.getElementById('user').value;
+    const pwd = document.getElementById('pwd').value;
+    const res = await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({user,pwd})});
+    if(res.ok){
+      document.getElementById('loginBox').style.display='none';
+      document.getElementById('logoutBox').style.display='inline-block';
+      document.getElementById('editor').style.display='block';
+      initEditor();
+      refreshPosts();
+    } else {
+      alert('Login failed');
+    }
+  });
+
+  document.getElementById('logoutBtn').addEventListener('click', async function(){
+    await fetch('/api/logout',{method:'POST'});
+    document.getElementById('loginBox').style.display='block';
+    document.getElementById('logoutBox').style.display='none';
+    document.getElementById('editor').style.display='none';
+  });
+
+  document.getElementById('createBtn').addEventListener('click', async function(){
+    const title = document.getElementById('title').value;
+    const content = simplemde ? simplemde.value() : document.getElementById('content').value;
+    const editId = this.getAttribute('data-edit-id');
+    // if a header file was selected, upload it first
+    let header_image = null;
+    const fileInput = document.getElementById('headerFile');
+    if(fileInput && fileInput.files && fileInput.files.length){
+      const fd = new FormData();
+      fd.append('file', fileInput.files[0]);
+      const up = await fetch('/api/upload', {method:'POST', body: fd});
+      if(up.ok){
+        const jo = await up.json(); header_image = jo.url;
+      } else { alert('Upload failed'); return; }
+    }
+    if(editId){
+      const res = await fetch('/api/posts/'+editId,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({title,content,header_image})});
+      if(res.ok){
+        this.removeAttribute('data-edit-id');
+        this.textContent = 'Create Post';
+        document.getElementById('title').value='';
+        if(simplemde) simplemde.value('');
+        refreshPosts();
+      } else alert('Update failed');
+    } else {
+      const res = await fetch('/api/posts', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({title,content,header_image})});
+      if(res.status===201){
+        document.getElementById('title').value='';
+        if(simplemde) simplemde.value('');
+        refreshPosts();
+      } else {
+        alert('Error creating post');
+      }
+    }
+  });
+
+  // initial load
+  refreshPosts();
+  </script>
+  <footer class="site-footer">
+    <div class="container">
+  <p>© 2026 Jack Johnson — <a href="/index.html">Home</a> · <a href="/blog">Blog</a> · <a href="/admin.html">Admin</a></p>
+    </div>
+  </footer>
+</body>
+</html>

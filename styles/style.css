@@ -1,0 +1,104 @@
+/* Basic styles for the scaffold */
+:root{--accent:#0066cc}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;margin:0;color:#222}
+/* Layout and typography */
+:root{
+	--bg:#f7fafc;
+	--surface:#ffffff;
+	--muted:#6b7280;
+	--accent:#2563eb; /* blue-600 */
+	--accent-2:#06b6d4; /* teal-400 */
+	--card:#ffffff;
+	--glass: rgba(15,23,42,0.03);
+	--shadow: rgba(2,6,23,0.08);
+}
+*{box-sizing:border-box}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.6;margin:0;color:#0f1724;background:var(--bg);-webkit-font-smoothing:antialiased}
+.container{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+
+/* Header */
+.site-header{background:rgba(255,255,255,0.8);backdrop-filter:blur(6px);border-bottom:1px solid rgba(15,23,42,0.04);position:sticky;top:0;z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 0}
+.brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.125rem;display:inline-flex;align-items:center;gap:.5rem}
+.brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-block;box-shadow:0 6px 18px var(--shadow)}
+.nav-avatar{width:36px;height:36px;border-radius:8px;object-fit:cover;margin-right:.5rem;display:inline-block}
+.hero-head{display:flex;align-items:center;gap:1rem;margin-bottom:.5rem}
+.hero-avatar{width:96px;height:96px;border-radius:12px;object-fit:cover;border:1px solid rgba(15,23,42,0.06)}
+.site-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.5rem;align-items:center}
+.site-nav a{color:#0f1724;text-decoration:none;padding:.5rem .85rem;border-radius:10px;font-weight:600;transition:all .15s ease}
+.site-nav a:hover{background:rgba(37,99,235,0.06);transform:translateY(-1px)}
+.site-nav a.active,.site-nav a[aria-current="page"]{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 8px 26px rgba(37,99,235,0.12);transform:none}
+.nav-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:1.1rem;padding:.25rem}
+
+/* Layout */
+main{padding:3.25rem 0}
+.page{padding-bottom:3rem}
+
+/* Hero */
+.hero{max-width:960px;margin:0 auto;text-align:left;padding:2.25rem;background:var(--surface);border-radius:12px;border:1px solid rgba(15,23,42,0.04);box-shadow:0 8px 30px var(--shadow)}
+.hero h2{margin:0 0 .5rem;font-size:2rem;color:#071133}
+.hero p{color:var(--muted);margin:0 0 1rem}
+.hero .hero-actions{display:flex;gap:.75rem;margin-top:1rem}
+
+/* Cards and components */
+.card{background:var(--card);border-radius:10px;padding:1rem;border:1px solid rgba(15,23,42,0.04);box-shadow:0 6px 22px var(--shadow)}
+.lead{color:var(--muted);font-size:1rem}
+.btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;border:none;padding:.6rem 1rem;border-radius:10px;cursor:pointer;font-weight:700;box-shadow:0 8px 20px rgba(37,99,235,0.08);transition:transform .12s ease, box-shadow .12s ease}
+.btn.secondary{background:transparent;color:var(--muted);border:1px solid rgba(15,23,42,0.06);box-shadow:none}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(37,99,235,0.08)}
+
+/* Ensure long words or long unbroken content inside cards wrap instead of overflowing */
+.card, .card * {
+	overflow-wrap: anywhere;
+	word-wrap: break-word;
+}
+
+/* Make images and iframes inside cards responsive and not overflow */
+.card img, .card iframe {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Games grid */
+.games-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin-top:1rem}
+.game-embed{border-radius:10px;padding:1rem;background:var(--card);border:1px solid rgba(15,23,42,0.04);display:flex;flex-direction:column;gap:.5rem}
+.game-meta{display:flex;gap:1rem;align-items:center}
+.thumb{width:120px;height:70px;object-fit:cover;border-radius:8px;flex:0 0 120px;border:1px solid rgba(15,23,42,0.06)}
+.game-desc{color:var(--muted);margin:0}
+
+.embed-wrap{position:relative;padding-top:56.25%;height:0;overflow:hidden;border-radius:8px;margin-top:.5rem}
+.embed-wrap iframe{position:absolute;left:0;top:0;width:100%;height:100%;border:0}
+
+/* Forms */
+input[type="text"], input[type="password"], textarea{width:100%;padding:.6rem .8rem;border-radius:8px;border:1px solid rgba(15,23,42,0.06);background:transparent;color:#071133}
+label{display:block;margin-top:.6rem;color:var(--muted)}
+
+/* Footer */
+.site-footer{margin-top:3rem;padding:2.25rem 0;color:var(--muted);text-align:center;font-size:.95rem;border-top:1px solid rgba(15,23,42,0.04);background:transparent}
+.site-footer a{color:var(--accent)}
+
+/* Responsive */
+@media (max-width:900px){
+	.games-grid{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+	.site-nav{display:none}
+	.nav-toggle{display:block}
+	.header-inner{gap:.5rem}
+	.thumb{width:100px;height:64px}
+	.hero{padding:1.25rem}
+	.brand{font-size:1rem}
+}
+
+/* Games embeds */
+.games-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem}
+.game-embed{border:1px solid #eee;padding:1rem;border-radius:8px;background:#fff}
+.game-embed h2{margin-top:0}
+.embed-wrap{position:relative;padding-top:56.25%;height:0;overflow:hidden}
+.embed-wrap iframe{position:absolute;left:0;top:0;width:100%;height:100%;border:0}
+.embed-link{margin-top:.5rem}
+
+@media (max-width:900px){
+	.games-grid{grid-template-columns:1fr}
+}
