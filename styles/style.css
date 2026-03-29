@@ -26,7 +26,11 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'He
 .hero-head{display:none}
 .hero-avatar{width:108px;height:108px;border-radius:50%;object-fit:cover;border:2px solid #e5e7eb;display:block;margin:0 auto 0.5rem auto;box-shadow:0 2px 12px rgba(37,99,235,0.08)}
 .hero-avatar-center{display:block;margin:0 auto 0.5rem auto;}
-.minimal-hero{max-width:400px;margin:2.5rem auto 0 auto;text-align:center;padding:2.5rem 1.5rem 2rem 1.5rem;background:var(--surface);border-radius:16px;border:1px solid rgba(15,23,42,0.06);box-shadow:0 8px 30px var(--shadow)}
+.compact-hero{max-width:260px;margin:2.5rem auto 0 auto;text-align:center;padding:1.5rem 1.2rem 1.2rem 1.2rem;background:var(--surface);border-radius:18px;border:1px solid rgba(15,23,42,0.08);box-shadow:0 8px 30px var(--shadow)}
+.hero-avatar-compact{width:92px;height:92px;border-radius:50%;object-fit:cover;border:2px solid #e5e7eb;display:block;margin:0 auto 0.7rem auto;box-shadow:0 2px 12px rgba(37,99,235,0.08)}
+.hero-title{margin:0 0 .3rem 0;font-size:1.25rem;color:#071133;font-weight:700;letter-spacing:0.01em;}
+.hero-sub{color:#6b7280;margin:0 0 1.1rem 0;font-size:1.01rem;}
+.hero-btn{display:block;width:100%;margin:0 auto 0 0;}
 .site-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.5rem;align-items:center}
 .site-nav a{color:#0f1724;text-decoration:none;padding:.5rem .85rem;border-radius:10px;font-weight:600;transition:all .15s ease}
 .site-nav a:hover{background:rgba(37,99,235,0.06);transform:translateY(-1px)}
