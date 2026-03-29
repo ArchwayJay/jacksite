@@ -1,3 +1,6 @@
+.compact-about{max-width:260px;margin:1.5rem auto 0 auto;text-align:center;padding:1.2rem 1.2rem 1.1rem 1.2rem;background:var(--surface);border-radius:18px;border:1px solid rgba(15,23,42,0.08);box-shadow:0 8px 30px var(--shadow)}
+.about-title{margin:0 0 .3rem 0;font-size:1.15rem;color:#071133;font-weight:700;letter-spacing:0.01em;}
+.about-desc{color:#6b7280;margin:0;font-size:1.01rem;}
 /* Basic styles for the scaffold */
 :root{--accent:#0066cc}
 *{box-sizing:border-box}
