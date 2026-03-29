@@ -174,9 +174,6 @@ def api_delete_post(post_id):
     conn.close()
     return jsonify({'ok': True})
 
-@app.route('/blog')
-def blog_page():
-    return send_from_directory('.', 'blog.html')
 
 @app.route('/admin')
 def admin_page():
