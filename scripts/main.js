@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', function(){
     })();
     links.forEach(a => {
       const raw = a.getAttribute('href') || '';
+      // Special case: if href is 'blog' or 'blog/', only mark as active if current page is actually blog (not index.html)
+      if((raw === 'blog' || raw === 'blog/') && current === 'index.html') return;
       const hrefNorm = (function(){
         // handle relative paths and bare names
         let h = raw.replace(/^\.\//,'');
