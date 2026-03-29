@@ -66,7 +66,7 @@
   }
 
   async function refreshPosts(){
-    const res = await fetch('/api/posts');
+    const res = await fetch('api/posts');
     const posts = await res.json();
     const el = document.getElementById('posts');
     if(!posts.length) el.innerHTML = '<p>No posts yet.</p>';
@@ -94,7 +94,7 @@
 
   async function editPost(e){
     const id = e.currentTarget.getAttribute('data-id');
-    const res = await fetch('/api/posts');
+    const res = await fetch('api/posts');
     const posts = await res.json();
     const post = posts.find(p => p.id == id);
     if(!post) return alert('Not found');
@@ -110,7 +110,7 @@
   document.getElementById('loginBtn').addEventListener('click', async function(){
     const user = document.getElementById('user').value;
     const pwd = document.getElementById('pwd').value;
-    const res = await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({user,pwd})});
+    const res = await fetch('api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({user,pwd})});
     if(res.ok){
       document.getElementById('loginBox').style.display='none';
       document.getElementById('logoutBox').style.display='inline-block';
@@ -123,7 +123,7 @@
   });
 
   document.getElementById('logoutBtn').addEventListener('click', async function(){
-    await fetch('/api/logout',{method:'POST'});
+    await fetch('api/logout',{method:'POST'});
     document.getElementById('loginBox').style.display='block';
     document.getElementById('logoutBox').style.display='none';
     document.getElementById('editor').style.display='none';
@@ -139,13 +139,13 @@
     if(fileInput && fileInput.files && fileInput.files.length){
       const fd = new FormData();
       fd.append('file', fileInput.files[0]);
-      const up = await fetch('/api/upload', {method:'POST', body: fd});
+      const up = await fetch('api/upload', {method:'POST', body: fd});
       if(up.ok){
         const jo = await up.json(); header_image = jo.url;
       } else { alert('Upload failed'); return; }
     }
     if(editId){
-      const res = await fetch('/api/posts/'+editId,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({title,content,header_image})});
+      const res = await fetch('api/posts/'+editId,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({title,content,header_image})});
       if(res.ok){
         this.removeAttribute('data-edit-id');
         this.textContent = 'Create Post';
@@ -154,7 +154,7 @@
         refreshPosts();
       } else alert('Update failed');
     } else {
-      const res = await fetch('/api/posts', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({title,content,header_image})});
+      const res = await fetch('api/posts', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({title,content,header_image})});
       if(res.status===201){
         document.getElementById('title').value='';
         if(simplemde) simplemde.value('');
@@ -170,7 +170,7 @@
   </script>
   <footer class="site-footer">
     <div class="container">
-  <p>© 2026 Jack Johnson — <a href="/index.html">Home</a> · <a href="/blog">Blog</a> · <a href="/admin.html">Admin</a></p>
+  <p>© 2026 Jack Johnson — <a href="index.html">Home</a> · <a href="blog">Blog</a> · <a href="admin.html">Admin</a></p>
     </div>
   </footer>
 </body>
