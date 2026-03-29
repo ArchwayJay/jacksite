@@ -23,8 +23,10 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'He
 .brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.125rem;display:inline-flex;align-items:center;gap:.5rem}
 .brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-block;box-shadow:0 6px 18px var(--shadow)}
 .nav-avatar{width:36px;height:36px;border-radius:8px;object-fit:cover;margin-right:.5rem;display:inline-block}
-.hero-head{display:flex;align-items:center;gap:1rem;margin-bottom:.5rem}
-.hero-avatar{width:96px;height:96px;border-radius:12px;object-fit:cover;border:1px solid rgba(15,23,42,0.06)}
+.hero-head{display:none}
+.hero-avatar{width:108px;height:108px;border-radius:50%;object-fit:cover;border:2px solid #e5e7eb;display:block;margin:0 auto 0.5rem auto;box-shadow:0 2px 12px rgba(37,99,235,0.08)}
+.hero-avatar-center{display:block;margin:0 auto 0.5rem auto;}
+.minimal-hero{max-width:400px;margin:2.5rem auto 0 auto;text-align:center;padding:2.5rem 1.5rem 2rem 1.5rem;background:var(--surface);border-radius:16px;border:1px solid rgba(15,23,42,0.06);box-shadow:0 8px 30px var(--shadow)}
 .site-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.5rem;align-items:center}
 .site-nav a{color:#0f1724;text-decoration:none;padding:.5rem .85rem;border-radius:10px;font-weight:600;transition:all .15s ease}
 .site-nav a:hover{background:rgba(37,99,235,0.06);transform:translateY(-1px)}
@@ -83,8 +85,8 @@ label{display:block;margin-top:.6rem;color:var(--muted)}
 	.games-grid{grid-template-columns:1fr}
 }
 @media (max-width:720px){
-	.site-nav{display:none}
-	.site-nav.open{display:block;background:var(--surface);position:absolute;top:100%;left:0;width:100vw;box-shadow:0 8px 24px rgba(0,0,0,0.07);padding:1.2em 0 1em 0;z-index:100;}
+	.site-nav{display:none;max-height:0;overflow:hidden;transition:max-height 0.3s cubic-bezier(.4,0,.2,1);}
+	.site-nav.open{display:block;max-height:400px;overflow:visible;background:var(--surface);position:absolute;top:100%;left:0;width:100vw;box-shadow:0 8px 24px rgba(0,0,0,0.07);padding:1.2em 0 1em 0;z-index:100;}
 	.site-nav.open ul{flex-direction:column;align-items:flex-start;gap:0;}
 	.site-nav.open a{display:block;width:100%;padding:.9em 1.5em;text-align:left;}
 	.nav-toggle{display:block}
