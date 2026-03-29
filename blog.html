@@ -43,7 +43,7 @@
   }
 
   async function load(){
-    const res = await fetch('/api/posts');
+    const res = await fetch('api/posts');
     const posts = await res.json();
     const el = document.getElementById('posts');
     if(!posts.length) el.innerHTML = '<p>No posts yet.</p>';
@@ -62,7 +62,7 @@
   </script>
   <footer class="site-footer">
     <div class="container">
-  <p>© 2026 Jack Johnson — <a href="/index.html">Home</a> · <a href="/projects.html">Projects</a> · <a href="/admin.html">Admin</a></p>
+  <p>© 2026 Jack Johnson — <a href="index.html">Home</a> · <a href="projects.html">Projects</a> · <a href="admin.html">Admin</a></p>
     </div>
   </footer>
 </body>
