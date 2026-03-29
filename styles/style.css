@@ -85,14 +85,17 @@
 	box-shadow: 0 2px 8px rgba(37,99,235,0.04);
 }
 .pro-jobs-list img {
-	height: 1.3em;
-	width: 1.3em;
-	min-width: 1.3em;
+	width: 28px !important;
+	height: 28px !important;
+	min-width: 28px !important;
+	max-width: 28px !important;
+	max-height: 28px !important;
 	object-fit: contain;
 	border-radius: 5px;
 	background: #fff;
 	box-shadow: 0 2px 8px rgba(37,99,235,0.07);
 	margin-top: 2px;
+	display: inline-block;
 }
 .pro-job-company {
 	color: #2563eb;
