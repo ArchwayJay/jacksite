@@ -85,11 +85,11 @@
 	box-shadow: 0 2px 8px rgba(37,99,235,0.04);
 }
 .pro-jobs-list img {
-	height: 2.2em;
-	width: 2.2em;
-	min-width: 2.2em;
+	height: 1.3em;
+	width: 1.3em;
+	min-width: 1.3em;
 	object-fit: contain;
-	border-radius: 6px;
+	border-radius: 5px;
 	background: #fff;
 	box-shadow: 0 2px 8px rgba(37,99,235,0.07);
 	margin-top: 2px;
