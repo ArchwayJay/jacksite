@@ -4,119 +4,110 @@ body {
 .resume-card, .resume-section {
 	box-shadow: 0 6px 32px rgba(37,99,235,0.08);
 	border: 1.5px solid #e3e8f0;
-	margin-bottom: 2.5rem;
+	margin-bottom: 3.2rem;
 }
 .resume-card {
-	padding-top: 2.7rem;
-	padding-bottom: 2.1rem;
+	padding-top: 3.1rem;
+	padding-bottom: 2.3rem;
 }
 .resume-section {
-	padding-top: 2rem;
-	padding-bottom: 1.5rem;
+	padding-top: 2.2rem;
+	padding-bottom: 1.7rem;
 }
 .resume-name {
-	font-size: 2.1rem;
+	font-size: 2.5rem;
 	font-weight: 900;
 	color: #1a237e;
-	margin-bottom: .2em;
+	margin-bottom: .25em;
+	letter-spacing: 0.01em;
 }
 .resume-title {
-	font-size: 1.18rem;
+	font-size: 1.22rem;
 	color: #2563eb;
 	font-weight: 700;
-	margin-bottom: .7em;
+	margin-bottom: .8em;
 }
 .resume-section h2 {
-	font-size: 1.25rem;
+	font-size: 1.35rem;
 	color: #1a237e;
 	font-weight: 800;
-	margin-bottom: 1.2rem;
-	border-bottom: 1.5px solid #e3e8f0;
-	padding-bottom: .4em;
+	margin-bottom: 1.3rem;
+	border-bottom: 2px solid #e3e8f0;
+	padding-bottom: .5em;
 	letter-spacing: 0.01em;
 }
 .resume-links {
-	margin-top: 1.2rem;
-	font-size: 1.08rem;
+	margin-top: 1.3rem;
+	font-size: 1.13rem;
 	display: flex;
 	justify-content: center;
-	gap: 1.2em;
+	gap: 1.4em;
 }
 .resume-links a {
 	color: #2563eb;
 	text-decoration: none;
 	font-weight: 700;
-	display: flex;
-	align-items: center;
-	gap: .4em;
 	transition: color .15s;
+	padding: 0.1em 0.2em;
+	border-radius: 4px;
 }
 .resume-links a:hover {
-	color: #1a237e;
-}
-.resume-links a[href*="linkedin"]::before {
-	content: url('https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg');
-	width: 1em;
-	height: 1em;
-	display: inline-block;
-	vertical-align: middle;
-	filter: grayscale(1) brightness(0.5);
-}
-.resume-links a[href^="mailto"]::before {
-	content: url('https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/maildotru.svg');
-	width: 1em;
-	height: 1em;
-	display: inline-block;
-	vertical-align: middle;
-	filter: grayscale(1) brightness(0.5);
+	color: #fff;
+	background: #2563eb;
 }
 .resume-skills li {
-	font-size: 1.01em;
-	padding: .32em 1em;
+	font-size: 1.08em;
+	padding: .36em 1.1em;
 	background: #e3e8f0;
 	color: #1a237e;
-	border-radius: 7px;
+	border-radius: 8px;
 	font-weight: 700;
 	margin-bottom: .3em;
+	box-shadow: 0 1px 2px rgba(37,99,235,0.04);
+}
+.resume-jobs {
+	margin-top: 0.5em;
 }
 .resume-jobs li {
+	display: flex;
 	align-items: center;
-	gap: .8em;
-	padding: .7em .7em .7em .7em;
-	margin-bottom: 1.2em;
+	gap: 1.1em;
+	padding: .8em .8em .8em .8em;
+	margin-bottom: 1.3em;
 	background: #f4f7fb;
-	border-radius: 8px;
-	box-shadow: 0 1px 4px rgba(37,99,235,0.04);
+	border-radius: 10px;
+	box-shadow: 0 2px 8px rgba(37,99,235,0.06);
 }
 .resume-jobs img {
-	width: 20px;
-	height: 20px;
-	min-width: 20px;
-	max-width: 20px;
-	max-height: 20px;
+	width: 32px;
+	height: 32px;
+	min-width: 32px;
+	max-width: 32px;
+	max-height: 32px;
 	object-fit: contain;
-	border-radius: 4px;
+	border-radius: 8px;
 	background: #fff;
-	box-shadow: 0 1px 4px rgba(37,99,235,0.05);
-	margin-right: 10px;
-	display: inline-block;
-	vertical-align: middle;
-	border: 1px solid #e3e8f0;
+	box-shadow: 0 1px 6px rgba(37,99,235,0.08);
+	margin-right: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #e3e8f0;
 }
 .resume-job-company {
 	color: #2563eb;
 	font-weight: 700;
-	font-size: 1em;
+	font-size: 1.04em;
 	margin-left: .3em;
 }
 .resume-job-location {
 	color: #607d8b;
-	font-size: .97em;
+	font-size: .99em;
 	margin-left: .3em;
 }
 .resume-job-date {
 	color: #aaa;
-	font-size: .95em;
+	font-size: .97em;
 	margin-left: .3em;
 }
 .resume-projects a {
@@ -135,18 +126,18 @@ body {
 		padding-right: 0.7rem;
 	}
 	.resume-jobs img {
-		width: 16px;
-		height: 16px;
-		min-width: 16px;
-		max-width: 16px;
-		max-height: 16px;
-		margin-right: 7px;
+		width: 24px;
+		height: 24px;
+		min-width: 24px;
+		max-width: 24px;
+		max-height: 24px;
+		margin-right: 8px;
 	}
 	.resume-name {
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 	}
 	.resume-section h2 {
-		font-size: 1.08rem;
+		font-size: 1.12rem;
 	}
 }
 /* --- Resume Homepage Clean Rewrite --- */
