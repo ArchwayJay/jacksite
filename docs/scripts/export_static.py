@@ -67,22 +67,22 @@ def render_blog_html(posts):
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Blog — Jack Johnson</title>
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
-  <link rel="icon" href="/images/alien.png">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml">
+  <link rel="icon" href="images/jack-linkedin.png">
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/">
-        <img src="/images/jack-linkedin.png" alt="Jack Johnson" class="nav-avatar">
+      <a class="brand" href="index.html">
+        <img src="images/jack-linkedin.png" alt="Jack Johnson" class="nav-avatar">
         Jack Johnson
       </a>
-      <nav class="site-nav">
+      <nav class="site-nav" id="siteNav">
         <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/projects.html">Projects</a></li>
-          <li><a href="/blog" aria-current="page">Blog</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog">Blog</a></li>
         </ul>
       </nav>
     </div>
@@ -96,9 +96,10 @@ def render_blog_html(posts):
     </section>
   </main>
 
+  <script src="scripts/main.js"></script>
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 Jack Johnson — <a href="/index.html">Home</a> · <a href="/projects.html">Projects</a></p>
+      <p>© 2026 Jack Johnson — <a href="blog">Blog</a> · <a href="projects.html">Projects</a> · <a href="admin.html">Admin</a></p>
     </div>
   </footer>
 </body>
