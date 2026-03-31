@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Walsall FC News</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/jack-linkedin.png" alt="Jack Johnson" class="nav-avatar">
+        Jack Johnson
+      </a>
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="library.html">Library</a></li>
+          <li><a href="walsall.html" aria-current="page">Walsall FC News</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="page container">
+    <section style="max-width:600px;margin:3.5rem auto 0 auto;padding:2.2rem 1.5rem 1.7rem 1.5rem;background:#fff;border-radius:14px;border:1px solid #e5e7eb;box-shadow:0 4px 24px rgba(37,99,235,0.07);">
+      <h1 style="font-size:1.5rem;font-weight:800;color:#071133;margin-bottom:.7em;text-align:center;">Walsall FC Latest News</h1>
+      <div id="walsall-news">
+        <p>Loading latest news...</p>
+      </div>
+    </section>
+  </main>
+  <script>
+    async function fetchWalsallNews() {
+      const newsDiv = document.getElementById('walsall-news');
+      try {
+        const res = await fetch('https://newsdata.io/api/1/news?apikey=public&country=gb&q=walsall%20fc');
+        const data = await res.json();
+        if (data.results && data.results.length > 0) {
+          newsDiv.innerHTML = data.results.slice(0,6).map(article => `
+            <article style="margin-bottom:1.2em;">
+              <a href="${article.link}" target="_blank" style="font-weight:700;color:#2563eb;text-decoration:none;">${article.title}</a>
+              <div style="color:#888;font-size:.97em;margin:.2em 0 .4em 0;">${article.pubDate ? new Date(article.pubDate).toLocaleDateString() : ''}</div>
+              <div style="color:#444;">${article.description ? article.description : ''}</div>
+            </article>
+          `).join('');
+        } else {
+          newsDiv.innerHTML = '<p>No recent news found for Walsall FC.</p>';
+        }
+      } catch (e) {
+        newsDiv.innerHTML = '<p>Could not load news at this time.</p>';
+      }
+    }
+    fetchWalsallNews();
+  </script>
+  <script src="scripts/main.js"></script>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Jack Johnson — <a href="index.html">Home</a></p>
+    </div>
+  </footer>
+</body>
+</html>
