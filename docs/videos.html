@@ -5,67 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My YouTube Videos</title>
     <link rel="stylesheet" href="/styles/style.css">
-    <style>
-        .videos-container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-        }
-        .video-embed {
-            flex: 1 1 320px;
-            max-width: 420px;
-            min-width: 320px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .video-embed iframe {
-            width: 100%;
-            height: 240px;
-            border: none;
-            border-radius: 8px;
-        }
-        .yt-link {
-            display: block;
-            text-align: center;
-            margin: 2rem 0 0 0;
-            font-weight: bold;
-            color: #c4302b;
-            text-decoration: none;
-        }
-        .yt-link:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
-    <nav>
-        <!-- ...existing navigation code... -->
-    </nav>
-    <main>
-        <h1 style="text-align:center;">My YouTube Videos</h1>
-        <div class="videos-container">
-            <div class="video-embed">
-                <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=ArchJay" allowfullscreen></iframe>
-                <p>Latest uploads from my channel.</p>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="index.html">
+                    <img src="/images/jack-linkedin.png" alt="Jack Johnson" class="nav-avatar">
+                    Jack Johnson
+                </a>
+                <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+                <nav class="site-nav" id="siteNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="library.html">Library</a></li>
+                        <li><a href="videos.html" aria-current="page">Videos</a></li>
+                    </ul>
+                </nav>
             </div>
-            <!-- Example: Embed a specific video (replace VIDEO_ID as needed) -->
-            <!--
-            <div class="video-embed">
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-                <p>Video title or description here.</p>
-            </div>
-            -->
-        </div>
-        <a class="yt-link" href="https://www.youtube.com/@ArchJay" target="_blank">Visit my YouTube Channel &rarr;</a>
-    </main>
+        </header>
+        <main class="page container">
+            <h1>Videos</h1>
+            <p>Watch my latest YouTube videos. This page updates automatically with my newest uploads!</p>
+            <div id="videos-grid" class="games-grid"></div>
+            <a class="btn" href="https://www.youtube.com/@ArchJay" target="_blank" style="display:block;text-align:center;margin:2.5rem auto 0 auto;max-width:300px;">Visit my YouTube Channel &rarr;</a>
+        </main>
+        <script src="/scripts/main.js"></script>
+        <script src="/scripts/youtube.js"></script>
 </body>
 </html>
