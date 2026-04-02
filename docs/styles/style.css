@@ -86,7 +86,7 @@ label{display:block;margin-top:.6rem;color:var(--muted)}
 	.site-nav{display:none}
 	.nav-toggle{display:block}
 	.header-inner{gap:.5rem}
-	.thumb{width:100px;height:64px}
+	.thumb{width:300px;height:100px}
 	.hero{padding:1.25rem}
 	.brand{font-size:1rem}
 }
