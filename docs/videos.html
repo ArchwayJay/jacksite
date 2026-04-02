@@ -1,6 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #18141a;
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #f2f2f2;
+        }
+        .site-header, .site-footer {
+            background: #1a0008;
+            color: #ff2d55;
+            border-bottom: 4px solid #ff2d55;
+            border-top: 0;
+            font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+        }
+        .site-header a, .site-footer a {
+            color: #ff2d55 !important;
+            text-shadow: 1px 1px 0 #000;
+        }
+        .brand {
+            font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
+            font-size: 2.1rem;
+            color: #ff2d55 !important;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0 #000;
+        }
+        .site-nav a {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1.15rem;
+            color: #fff !important;
+            background: #2d0a15;
+            border-radius: 8px;
+            margin: 0 0.2em;
+            border: 1.5px solid #ff2d55;
+            box-shadow: 0 2px 8px #ff2d5533;
+            padding: 0.4em 1.1em;
+            transition: background 0.2s, color 0.2s;
+        }
+        .site-nav a:hover, .site-nav a[aria-current="page"] {
+            background: #ff2d55;
+            color: #fff !important;
+            border-color: #fff;
+        }
+        main.page.container {
+            background: #23111a;
+            border: 3px solid #ff2d55;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px #ff2d5533;
+            margin-top: 2.5rem;
+            padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+            max-width: 1100px;
+        }
+        .games-grid {
+            background: #23111a;
+            border-radius: 12px;
+            padding: 1.5rem 0.5rem;
+        }
+        .game-embed {
+            background: #2d0a15;
+            border: 2px solid #ff2d55;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px #ff2d5522;
+        }
+        h1, h2, h3 {
+            font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
+            color: #ff2d55;
+            font-size: 2.2rem;
+            margin-bottom: 0.7em;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 0 #000;
+        }
+        p, .game-desc {
+            font-size: 1.15rem;
+            color: #f2f2f2;
+        }
+        .site-footer {
+            border-top: 4px solid #ff2d55;
+            border-bottom: 0;
+            margin-top: 3rem;
+            font-size: 1.1rem;
+            background: #1a0008;
+            color: #ff2d55;
+        }
+        .btn {
+            background: linear-gradient(90deg,#ff2d55,#a80038);
+            color: #fff;
+            border: none;
+            padding: .6rem 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(255,45,85,0.08);
+            transition: transform .12s ease, box-shadow .12s ease;
+            margin-top: 0.5rem;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(255,45,85,0.18);
+            background: linear-gradient(90deg,#a80038,#ff2d55);
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My YouTube Videos</title>
@@ -33,7 +135,7 @@
                                     <img src="https://img.youtube.com/vi/VJSpyfrcDjY/mqdefault.jpg" alt="VJSpyfrcDjY thumbnail" class="thumb" loading="lazy" width="320" height="180">
                                 </a>
                                 <div class="game-meta" style="text-align:center;">
-                                    <h2 style="margin-bottom:1rem;">Video Title 1</h2>
+                                    <h2 style="margin-bottom:1rem;">Video Title 1</h2>                                    python3 -m http.server 8000                                    python3 -m http.server 8000                                    python3 -m http.server 8000
                                     <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=VJSpyfrcDjY&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank">Watch</a></div>
                                 </div>
                             </article>
