@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Videos – Jack Johnson</title>
+    <link rel="icon" href="images/jack-linkedin.png">
+    <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -52,18 +57,7 @@
             box-shadow: 0 8px 32px #ff2d5533;
             margin-top: 2.5rem;
             padding: 2.5rem 1.5rem 2.5rem 1.5rem;
-            max-width: 1100px;
-        }
-        .games-grid {
-            background: #23111a;
-            border-radius: 12px;
-            padding: 1.5rem 0.5rem;
-        }
-        .game-embed {
-            background: #2d0a15;
-            border: 2px solid #ff2d55;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px #ff2d5522;
+            max-width: 900px;
         }
         h1, h2, h3 {
             font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
@@ -73,7 +67,7 @@
             letter-spacing: 1.5px;
             text-shadow: 1px 1px 0 #000;
         }
-        p, .game-desc {
+        p {
             font-size: 1.15rem;
             color: #f2f2f2;
         }
@@ -102,109 +96,131 @@
             box-shadow: 0 12px 28px rgba(255,45,85,0.18);
             background: linear-gradient(90deg,#a80038,#ff2d55);
         }
+        .games-grid {
+            background: #23111a;
+            border-radius: 12px;
+            padding: 1.5rem 0.5rem;
+        }
+        .game-embed {
+            background: #2d0a15;
+            border: 2px solid #ff2d55;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px #ff2d5522;
+        }
+        .game-meta h2 {
+            font-size: 1.3rem;
+            color: #ff2d55;
+            font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
+            margin-bottom: 0.7em;
+            text-shadow: 1px 1px 0 #000;
+        }
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My YouTube Videos</title>
-    <link rel="stylesheet" href="/jacksite/styles/style.css">
 </head>
 <body>
-        <header class="site-header">
-            <div class="container header-inner">
-                <a class="brand" href="index.html">
-                    <img src="/jacksite/images/jack-linkedin.png" alt="Jack Johnson" class="nav-avatar">
-                    Jack Johnson
-                </a>
-                <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
-                <nav class="site-nav" id="siteNav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="library.html">Library</a></li>
-                        <li><a href="videos.html" aria-current="page">Videos</a></li>
-                    </ul>
-                </nav>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/jack-linkedin.png" alt="Jack Johnson" class="nav-avatar">
+                Jack Johnson
+            </a>
+            <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <nav class="site-nav" id="siteNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="videos.html" aria-current="page">Videos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page container">
+        <section class="card">
+            <h1>Videos</h1>
+            <p>Watch my latest YouTube videos. Click any thumbnail to watch on YouTube.</p>
+            <div class="games-grid">
+                <article class="game-embed">
+                    <a href="https://www.youtube.com/watch?v=VJSpyfrcDjY&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank" rel="noopener">
+                        <img src="https://img.youtube.com/vi/VJSpyfrcDjY/mqdefault.jpg" alt="VJSpyfrcDjY thumbnail" class="thumb" loading="lazy" width="320" height="180">
+                    </a>
+                    <div class="game-meta" style="text-align:center;">
+                        <h2>Video Title 1</h2>
+                        <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=VJSpyfrcDjY&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank">Watch</a></div>
+                    </div>
+                </article>
+                <article class="game-embed">
+                    <a href="https://www.youtube.com/watch?v=4Rfs-1Qjd08&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank" rel="noopener">
+                        <img src="https://img.youtube.com/vi/4Rfs-1Qjd08/mqdefault.jpg" alt="4Rfs-1Qjd08 thumbnail" class="thumb" loading="lazy" width="320" height="180">
+                    </a>
+                    <div class="game-meta" style="text-align:center;">
+                        <h2>Video Title 2</h2>
+                        <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=4Rfs-1Qjd08&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank">Watch</a></div>
+                    </div>
+                </article>
+                <article class="game-embed">
+                    <a href="https://www.youtube.com/watch?v=vO73sFZzO7I&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank" rel="noopener">
+                        <img src="https://img.youtube.com/vi/vO73sFZzO7I/mqdefault.jpg" alt="vO73sFZzO7I thumbnail" class="thumb" loading="lazy" width="320" height="180">
+                    </a>
+                    <div class="game-meta" style="text-align:center;">
+                        <h2>Video Title 3</h2>
+                        <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=vO73sFZzO7I&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank">Watch</a></div>
+                    </div>
+                </article>
+                <article class="game-embed">
+                    <a href="https://www.youtube.com/watch?v=IL7CGNHgXZo&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=4" target="_blank" rel="noopener">
+                        <img src="https://img.youtube.com/vi/IL7CGNHgXZo/mqdefault.jpg" alt="IL7CGNHgXZo thumbnail" class="thumb" loading="lazy" width="320" height="180">
+                    </a>
+                    <div class="game-meta" style="text-align:center;">
+                        <h2>Video Title 4</h2>
+                        <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=IL7CGNHgXZo&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=4" target="_blank">Watch</a></div>
+                    </div>
+                </article>
+                <article class="game-embed">
+                    <a href="https://www.youtube.com/watch?v=5ZG4tJleE2g&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=5" target="_blank" rel="noopener">
+                        <img src="https://img.youtube.com/vi/5ZG4tJleE2g/mqdefault.jpg" alt="5ZG4tJleE2g thumbnail" class="thumb" loading="lazy" width="320" height="180">
+                    </a>
+                    <div class="game-meta" style="text-align:center;">
+                        <h2>Video Title 5</h2>
+                        <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=5ZG4tJleE2g&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=5" target="_blank">Watch</a></div>
+                    </div>
+                </article>
+                <article class="game-embed">
+                    <a href="https://www.youtube.com/watch?v=2akGGc2ZNs0&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=6" target="_blank" rel="noopener">
+                        <img src="https://img.youtube.com/vi/2akGGc2ZNs0/mqdefault.jpg" alt="2akGGc2ZNs0 thumbnail" class="thumb" loading="lazy" width="320" height="180">
+                    </a>
+                    <div class="game-meta" style="text-align:center;">
+                        <h2>Video Title 6</h2>
+                        <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=2akGGc2ZNs0&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=6" target="_blank">Watch</a></div>
+                    </div>
+                </article>
+                <article class="game-embed">
+                    <a href="https://www.youtube.com/watch?v=9X51OOOxYp4&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=7" target="_blank" rel="noopener">
+                        <img src="https://img.youtube.com/vi/9X51OOOxYp4/mqdefault.jpg" alt="9X51OOOxYp4 thumbnail" class="thumb" loading="lazy" width="320" height="180">
+                    </a>
+                    <div class="game-meta" style="text-align:center;">
+                        <h2>Video Title 7</h2>
+                        <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=9X51OOOxYp4&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=7" target="_blank">Watch</a></div>
+                    </div>
+                </article>
+                <article class="game-embed">
+                    <a href="https://www.youtube.com/watch?v=LXP6jJk1Nac&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=8" target="_blank" rel="noopener">
+                        <img src="https://img.youtube.com/vi/LXP6jJk1Nac/mqdefault.jpg" alt="LXP6jJk1Nac thumbnail" class="thumb" loading="lazy" width="320" height="180">
+                    </a>
+                    <div class="game-meta" style="text-align:center;">
+                        <h2>Video Title 8</h2>
+                        <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=LXP6jJk1Nac&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=8" target="_blank">Watch</a></div>
+                    </div>
+                </article>
             </div>
-        </header>
-        <main class="page container">
-                        <h1>Videos</h1>
-                        <p>Watch my latest YouTube videos. Click any thumbnail to watch on YouTube.</p>
-                        <div class="games-grid">
-                            <article class="game-embed">
-                                <a href="https://www.youtube.com/watch?v=VJSpyfrcDjY&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank" rel="noopener">
-                                    <img src="https://img.youtube.com/vi/VJSpyfrcDjY/mqdefault.jpg" alt="VJSpyfrcDjY thumbnail" class="thumb" loading="lazy" width="320" height="180">
-                                </a>
-                                <div class="game-meta" style="text-align:center;">
-                                    <h2 style="margin-bottom:1rem;">Video Title 1</h2>                                    python3 -m http.server 8000                                    python3 -m http.server 8000                                    python3 -m http.server 8000
-                                    <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=VJSpyfrcDjY&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank">Watch</a></div>
-                                </div>
-                            </article>
-                            <article class="game-embed">
-                                <a href="https://www.youtube.com/watch?v=4Rfs-1Qjd08&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank" rel="noopener">
-                                    <img src="https://img.youtube.com/vi/4Rfs-1Qjd08/mqdefault.jpg" alt="4Rfs-1Qjd08 thumbnail" class="thumb" loading="lazy" width="320" height="180">
-                                </a>
-                                <div class="game-meta" style="text-align:center;">
-                                    <h2 style="margin-bottom:1rem;">Video Title 2</h2>
-                                    <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=4Rfs-1Qjd08&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank">Watch</a></div>
-                                </div>
-                            </article>
-                            <article class="game-embed">
-                                <a href="https://www.youtube.com/watch?v=vO73sFZzO7I&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank" rel="noopener">
-                                    <img src="https://img.youtube.com/vi/vO73sFZzO7I/mqdefault.jpg" alt="vO73sFZzO7I thumbnail" class="thumb" loading="lazy" width="320" height="180">
-                                </a>
-                                <div class="game-meta" style="text-align:center;">
-                                    <h2 style="margin-bottom:1rem;">Video Title 3</h2>
-                                    <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=vO73sFZzO7I&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW" target="_blank">Watch</a></div>
-                                </div>
-                            </article>
-                            <article class="game-embed">
-                                <a href="https://www.youtube.com/watch?v=IL7CGNHgXZo&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=4" target="_blank" rel="noopener">
-                                    <img src="https://img.youtube.com/vi/IL7CGNHgXZo/mqdefault.jpg" alt="IL7CGNHgXZo thumbnail" class="thumb" loading="lazy" width="320" height="180">
-                                </a>
-                                <div class="game-meta" style="text-align:center;">
-                                    <h2 style="margin-bottom:1rem;">Video Title 4</h2>
-                                    <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=IL7CGNHgXZo&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=4" target="_blank">Watch</a></div>
-                                </div>
-                            </article>
-                            <article class="game-embed">
-                                <a href="https://www.youtube.com/watch?v=5ZG4tJleE2g&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=5" target="_blank" rel="noopener">
-                                    <img src="https://img.youtube.com/vi/5ZG4tJleE2g/mqdefault.jpg" alt="5ZG4tJleE2g thumbnail" class="thumb" loading="lazy" width="320" height="180">
-                                </a>
-                                <div class="game-meta" style="text-align:center;">
-                                    <h2 style="margin-bottom:1rem;">Video Title 5</h2>
-                                    <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=5ZG4tJleE2g&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=5" target="_blank">Watch</a></div>
-                                </div>
-                            </article>
-                            <article class="game-embed">
-                                <a href="https://www.youtube.com/watch?v=2akGGc2ZNs0&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=6" target="_blank" rel="noopener">
-                                    <img src="https://img.youtube.com/vi/2akGGc2ZNs0/mqdefault.jpg" alt="2akGGc2ZNs0 thumbnail" class="thumb" loading="lazy" width="320" height="180">
-                                </a>
-                                <div class="game-meta" style="text-align:center;">
-                                    <h2 style="margin-bottom:1rem;">Video Title 6</h2>
-                                    <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=2akGGc2ZNs0&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=6" target="_blank">Watch</a></div>
-                                </div>
-                            </article>
-                            <article class="game-embed">
-                                <a href="https://www.youtube.com/watch?v=9X51OOOxYp4&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=7" target="_blank" rel="noopener">
-                                    <img src="https://img.youtube.com/vi/9X51OOOxYp4/mqdefault.jpg" alt="9X51OOOxYp4 thumbnail" class="thumb" loading="lazy" width="320" height="180">
-                                </a>
-                                <div class="game-meta" style="text-align:center;">
-                                    <h2 style="margin-bottom:1rem;">Video Title 7</h2>
-                                    <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=9X51OOOxYp4&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=7" target="_blank">Watch</a></div>
-                                </div>
-                            </article>
-                            <article class="game-embed">
-                                <a href="https://www.youtube.com/watch?v=LXP6jJk1Nac&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=8" target="_blank" rel="noopener">
-                                    <img src="https://img.youtube.com/vi/LXP6jJk1Nac/mqdefault.jpg" alt="LXP6jJk1Nac thumbnail" class="thumb" loading="lazy" width="320" height="180">
-                                </a>
-                                <div class="game-meta" style="text-align:center;">
-                                    <h2 style="margin-bottom:1rem;">Video Title 8</h2>
-                                    <div style="margin-top:0.5rem;"><a class="btn" style="display:inline-block;" href="https://www.youtube.com/watch?v=LXP6jJk1Nac&list=PLDRHw5yMeZWScqKbjZNqSfw7mnweHfhlW&index=8" target="_blank">Watch</a></div>
-                                </div>
-                            </article>
-                        </div>
-                        <a class="btn" href="https://www.youtube.com/@ArchJay" target="_blank" style="display:block;text-align:center;margin:2.5rem auto 0 auto;max-width:300px;">Visit my YouTube Channel &rarr;</a>
-        </main>
-    <script src="/jacksite/scripts/main.js"></script>
+            <a class="btn" href="https://www.youtube.com/@ArchJay" target="_blank" style="display:block;text-align:center;margin:2.5rem auto 0 auto;max-width:300px;">Visit my YouTube Channel &rarr;</a>
+        </section>
+    </main>
+    <script src="scripts/main.js"></script>
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 Jack Johnson — <a href="index.html">Home</a></p>
+        </div>
+    </footer>
 </body>
 </html>
