@@ -114,13 +114,8 @@
 
   <main class="page container">
   <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:2.5rem;">
-    <div class="spinning-earth" style="margin-bottom:2.2rem;">
-      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="60" cy="60" r="56" fill="#1e90ff" stroke="#0a2540" stroke-width="4"/>
-        <ellipse cx="60" cy="60" rx="48" ry="54" fill="#3ec6ff" opacity=".7"/>
-        <path d="M60 10 Q70 30 90 30 Q110 30 100 60 Q90 90 60 110 Q30 90 20 60 Q10 30 30 30 Q50 30 60 10 Z" fill="#fff" opacity=".7"/>
-        <path d="M60 20 Q80 40 100 60 Q80 80 60 100 Q40 80 20 60 Q40 40 60 20 Z" fill="#0a2540" opacity=".18"/>
-      </svg>
+    <div class="spinning-logo" style="margin-bottom:2.2rem;">
+      <img src="images/walsall-fc.png" alt="Walsall FC" width="120" height="120" style="display:block;max-width:120px;max-height:120px;" />
     </div>
     <section style="max-width:420px;margin:0 auto 0 auto;padding:2.2rem 1.5rem 1.7rem 1.5rem;background:#fff;border-radius:14px;border:1px solid #e5e7eb;box-shadow:0 4px 24px rgba(37,99,235,0.07);text-align:center;">
       <h1 style="font-size:1.7rem;font-weight:800;color:#071133;margin-bottom:.7em;">About Me</h1>
@@ -129,13 +124,13 @@
   </div>
   </main>
     <style>
-      .spinning-earth svg {
-        animation: earth-spin 4s linear infinite;
-        box-shadow: 0 0 32px #1e90ff44;
+      .spinning-logo img {
+        animation: logo-spin 3.5s linear infinite;
+        box-shadow: 0 0 32px #ff2d5544;
         border-radius: 50%;
-        background: radial-gradient(circle at 60% 40%, #3ec6ff 60%, #1e90ff 100%);
+        background: #fff;
       }
-      @keyframes earth-spin {
+      @keyframes logo-spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
       }
