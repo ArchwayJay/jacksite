@@ -121,9 +121,9 @@ main{padding:3.25rem 0}
 	}
 }
 .thumb {
-	width: 100%;
-	max-width: 320px;
-	height: 180px;
+		width: 100%;
+		max-width: 540px;
+		height: 300px;
 	object-fit: cover;
 	border-radius: 8px;
 	border: 1px solid rgba(15,23,42,0.06);
