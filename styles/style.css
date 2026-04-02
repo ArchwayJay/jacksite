@@ -1,3 +1,8 @@
+/* LOCAL PREVIEW: Make all .card backgrounds white for all pages */
+.card {
+	background: #fff !important;
+	color: #18141a !important;
+}
 /* Basic styles for the scaffold */
 :root{--accent:#0066cc}
 *{box-sizing:border-box}
