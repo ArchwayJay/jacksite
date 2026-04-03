@@ -18,11 +18,37 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'He
 .container{max-width:1100px;margin:0 auto;padding:0 1.25rem}
 
 /* Header */
-.site-header{background:rgba(255,255,255,0.8);backdrop-filter:blur(6px);border-bottom:1px solid rgba(15,23,42,0.04);position:sticky;top:0;z-index:50}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 0}
-.brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.125rem;display:inline-flex;align-items:center;gap:.5rem}
-.brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-block;box-shadow:0 6px 18px var(--shadow)}
-.nav-avatar{width:200px;height:200px;border-radius:8px;object-fit:cover;margin-right:.5rem;display:inline-block}
+.site-header {
+	background: var(--card);
+	border: 1px solid rgba(15,23,42,0.04);
+	border-radius: 10px;
+	box-shadow: 0 6px 22px var(--shadow);
+	margin: 1.5rem auto 2.2rem auto;
+	max-width: 1100px;
+	padding: 0.5rem 1.5rem;
+}
+.header-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.2rem;
+}
+.brand {
+	font-weight: 700;
+	color: var(--accent);
+	text-decoration: none;
+	font-size: 1.15rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.brand img, .nav-avatar {
+	width: 36px;
+	height: 36px;
+	border-radius: 8px;
+	object-fit: cover;
+	box-shadow: 0 2px 8px var(--shadow);
+}
 .hero-head{display:flex;align-items:center;gap:1rem;margin-bottom:.5rem}
 .hero-avatar{width:96px;height:96px;border-radius:12px;object-fit:cover;border:1px solid rgba(15,23,42,0.06)}
 .site-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.5rem;align-items:center}
