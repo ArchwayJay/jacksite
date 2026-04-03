@@ -1,3 +1,52 @@
+/* Modern navigation bar styles */
+.main-nav {
+	width: 100%;
+	max-width: 700px;
+	margin: 2.2rem auto 2.2rem auto;
+	display: flex;
+	justify-content: center;
+	gap: 2.2rem;
+	padding: 1.1rem 0;
+	background: #23111a;
+	border-radius: 14px;
+	box-shadow: 0 4px 18px #ff2d5522;
+}
+.main-nav a {
+	color: #ff2d55;
+	font-weight: 700;
+	font-size: 1.13rem;
+	text-decoration: none;
+	padding: .55em 1.4em;
+	border-radius: 8px;
+	transition: background .15s, color .15s;
+	letter-spacing: 0.5px;
+}
+.main-nav a:hover, .main-nav a.active, .main-nav a[aria-current="page"] {
+	background: #ff2d55;
+	color: #fff;
+}
+body {
+	background: #18141a;
+	color: #f2f2f2;
+}
+main, .page, section, .card {
+	border-radius: 16px !important;
+	box-shadow: 0 8px 32px #ff2d5533 !important;
+}
+section, .card {
+	background: #23111a !important;
+	border: 2px solid #ff2d55 !important;
+	color: #f2f2f2 !important;
+}
+h1, h2, h3 {
+	color: #ff2d55 !important;
+	font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
+	letter-spacing: 1.5px;
+	text-shadow: 1px 1px 0 #000;
+}
+a {
+	transition: color .15s;
+}
 /* Basic styles for the scaffold */
 :root{--accent:#0066cc}
 /* Layout */
