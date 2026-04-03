@@ -1,13 +1,13 @@
 /* Make navigation logo much bigger */
 .nav-avatar-large {
-	width: 72px !important;
-	height: 72px !important;
-	min-width: 72px !important;
-	min-height: 72px !important;
-	max-width: 72px !important;
-	max-height: 72px !important;
-	border-radius: 16px !important;
-	box-shadow: 0 4px 24px #ff2d5533;
+	width: 44px !important;
+	height: 44px !important;
+	min-width: 44px !important;
+	min-height: 44px !important;
+	max-width: 44px !important;
+	max-height: 44px !important;
+	border-radius: 10px !important;
+	box-shadow: 0 2px 8px #ff2d5533;
 }
 /* LOCAL PREVIEW: Make all .card backgrounds white for all pages */
 .card {
