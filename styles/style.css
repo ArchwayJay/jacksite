@@ -33,21 +33,21 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
 body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.6;margin:0;color:#0f1724;background:var(--bg);-webkit-font-smoothing:antialiased}
 .container{max-width:1100px;margin:0 auto;padding:0 1.25rem}
 
-/* Header */
+/* Compact Header */
 .site-header{background:rgba(255,255,255,0.8);backdrop-filter:blur(6px);border-bottom:1px solid rgba(15,23,42,0.04);position:sticky;top:0;z-index:50}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.35rem 0;min-height:unset;}
-.brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.45rem;display:inline-flex;align-items:center;gap:.5rem;line-height:1.1;}
-.brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-block;box-shadow:0 6px 18px var(--shadow)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.08rem 0;min-height:unset;}
+.brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:0.98rem;display:inline-flex;align-items:center;gap:.13rem;line-height:1;}
+.brand .logo{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-block;box-shadow:0 2px 8px var(--shadow)}
 .nav-avatar{
-	width:36px;
-	height:36px;
-	border-radius:8px;
+	width:24px;
+	height:24px;
+	border-radius:6px;
 	object-fit:cover;
-	margin-right:.5rem;
+	margin-right:0.18rem;
 	display:inline-block;
 	background:#fff;
 	border:1px solid #e5e7eb;
-	box-shadow:0 2px 8px rgba(37,99,235,0.07);
+	box-shadow:0 1px 2px rgba(37,99,235,0.07);
 }
 .hero-head{display:none}
 .hero-avatar{width:108px;height:108px;border-radius:50%;object-fit:cover;border:2px solid #e5e7eb;display:block;margin:0 auto 0.5rem auto;box-shadow:0 2px 12px rgba(37,99,235,0.08)}
@@ -57,8 +57,8 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'He
 .hero-title{margin:0 0 .3rem 0;font-size:1.25rem;color:#071133;font-weight:700;letter-spacing:0.01em;}
 .hero-sub{color:#6b7280;margin:0 0 1.1rem 0;font-size:1.01rem;}
 .hero-btn{display:block;width:100%;margin:0 auto 0 0;}
-.site-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.5rem;align-items:center}
-.site-nav a{color:#0f1724;text-decoration:none;padding:.5rem .85rem;border-radius:10px;font-weight:600;transition:all .15s ease}
+.site-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.13rem;align-items:center}
+.site-nav a{color:#0f1724;text-decoration:none;padding:.13rem .38rem;border-radius:5px;font-weight:600;transition:all .15s ease;font-size:0.87rem;}
 
 /* Cool animated underline effect for active nav link */
 .site-nav a.active, .site-nav a[aria-current="page"] {
@@ -100,13 +100,13 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'He
 	.nav-toggle {
 		display: block;
 		position: absolute;
-		right: 1.5rem;
-		top: 1.2rem;
+		right: 1.1rem;
+		top: 0.6rem;
 		z-index: 101;
 		background: none;
 		border: none;
 		color: #ff2d55;
-		font-size: 2rem;
+		font-size: 1.3rem;
 		cursor: pointer;
 	}
 	.site-nav {
@@ -116,33 +116,33 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'He
 		left: 0;
 		width: 100vw;
 		background: #23111a;
-		box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-		border-bottom: 3px solid #ff2d55;
-		padding: 1.2em 0 1em 0;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.13);
+		border-bottom: 2px solid #ff2d55;
+		padding: 0.5em 0 0.4em 0;
 		z-index: 100;
 	}
-		nav.site-nav.open, .site-nav.open {
-			display: block !important;
-			max-height: 400px;
-			overflow: visible;
-			animation: dropdownFade 0.2s;
-		}
+	nav.site-nav.open, .site-nav.open {
+		display: block !important;
+		max-height: 300px;
+		overflow: visible;
+		animation: dropdownFade 0.18s;
+	}
 	.site-nav ul {
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 0;
-		padding-left: 0.5em;
+		padding-left: 0.2em;
 	}
 	.site-nav a {
 		display: block;
 		width: 100%;
-		padding: 1em 1.5em;
+		padding: 0.38em 0.7em;
 		text-align: left;
 		border-radius: 0;
 		border: none;
 		background: none;
 		color: #fff !important;
-		font-size: 1.15rem;
+		font-size: 0.98rem;
 		box-shadow: none;
 	}
 }
